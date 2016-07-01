@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Template.Library", "Ci.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Template.Web", "Ci.Template.Web\Ci.Template.Web.csproj", "{39D5CD17-DCDF-4786-82A3-56306299C41D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Template.Admin", "Ci.Template.Admin\Ci.Template.Admin.csproj", "{0AC3CBD8-BF87-4836-8682-0FFDD41BA7F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{39D5CD17-DCDF-4786-82A3-56306299C41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39D5CD17-DCDF-4786-82A3-56306299C41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39D5CD17-DCDF-4786-82A3-56306299C41D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC3CBD8-BF87-4836-8682-0FFDD41BA7F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC3CBD8-BF87-4836-8682-0FFDD41BA7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC3CBD8-BF87-4836-8682-0FFDD41BA7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC3CBD8-BF87-4836-8682-0FFDD41BA7F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
