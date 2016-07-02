@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>14.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{155BB1EA-B8A5-4363-B5BC-5D58B9294CCC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ci.Template.Project</RootNamespace>
+    <AssemblyName>Ci.Template.Project</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <GeneratePkgDefFile>false</GeneratePkgDefFile>
+    <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CreateVsixContainer>false</CreateVsixContainer>
+    <DeployExtension>false</DeployExtension>
+    <DeployVSTemplates>false</DeployVSTemplates>
+    <CopyVsixManifestToOutput>false</CopyVsixManifestToOutput>
+    <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.CoreUtility">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ci.Template.Admin\App_Start\RouteConfig.cs" />
+    <Content Include="Ci.Template.Admin\Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Content>
+    <Content Include="Ci.Template.Admin\Properties\AssemblyInfo.cs" />
+    <Content Include="Ci.Template.Library\Properties\AssemblyInfo.cs" />
+    <Content Include="Ci.Template.Service\Properties\AssemblyInfo.cs" />
+    <Content Include="Ci.Template.Web\App_Start\RouteConfig.cs" />
+    <Content Include="Ci.Template.Web\Controllers\HomeController.cs" />
+    <Content Include="Ci.Template.Web\Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Content>
+    <Content Include="Ci.Template.Web\Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="__PreviewImage.png" />
+    <Content Include="__TemplateIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AssemblyInfo.cs" />
+    <Content Include="Ci.Template.Admin\packages.config" />
+    <None Include="Ci.Template.Admin\Views\web.config" />
+    <None Include="Ci.Template.Admin\Web.config" />
+    <None Include="Ci.Template.Admin\Web.Debug.config" />
+    <None Include="Ci.Template.Admin\Web.Release.config" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Bold.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Bold.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Bold.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Bold.woff2" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Light.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Light.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Light.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Light.woff2" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Medium.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Medium.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Medium.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Medium.woff2" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Regular.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Regular.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Regular.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Regular.woff2" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Thin.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Thin.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Thin.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Thin.woff2" />
+    <None Include="Ci.Template.Web\Content\materialize\font\material-design-icons\Material-Design-Icons.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\font\material-design-icons\Material-Design-Icons.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\font\material-design-icons\Material-Design-Icons.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\font\material-design-icons\Material-Design-Icons.woff2" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Bold.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Bold.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Bold.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Bold.woff2" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Light.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Light.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Light.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Light.woff2" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Medium.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Medium.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Medium.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Medium.woff2" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Regular.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Regular.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Regular.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Regular.woff2" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Thin.eot" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Thin.ttf" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Thin.woff" />
+    <None Include="Ci.Template.Web\Content\materialize\font\roboto\Roboto-Thin.woff2" />
+    <None Include="Ci.Template.Web\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Ci.Template.Web\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Ci.Template.Web\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Ci.Template.Web\packages.config" />
+    <None Include="Ci.Template.Web\Scripts\jquery-2.2.4.min.map" />
+    <Content Include="Ci.Template.Web\Views\Home\Demo.cshtml" />
+    <Content Include="Ci.Template.Web\Views\Home\Index.cshtml" />
+    <Content Include="Ci.Template.Web\Views\Shared\_Layout.cshtml" />
+    <Content Include="Ci.Template.Web\Views\web.config" />
+    <Content Include="Ci.Template.Web\Views\_ViewStart.cshtml" />
+    <None Include="Ci.Template.Web\Web.config" />
+    <None Include="Ci.Template.Web\Web.Debug.config" />
+    <None Include="Ci.Template.Web\Web.Release.config" />
+    <None Include="Class1.cs" />
+    <None Include="ProjectTemplate.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <VSTemplate Include="Ci.Template.vstemplate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ci.Template.Admin\Ci.Template.Admin.csproj" />
+    <Content Include="Ci.Template.Admin\Global.asax" />
+    <Content Include="Ci.Template.Admin\Ci.Template.Admin.vstemplate" />
+    <Content Include="Ci.Template.Admin\__PreviewImage.png" />
+    <Content Include="Ci.Template.Admin\__TemplateIcon.png" />
+    <Content Include="Ci.Template.Library\Ci.Template.Library.csproj" />
+    <Content Include="Ci.Template.Library\Ci.Template.Library.vstemplate" />
+    <Content Include="Ci.Template.Library\__PreviewImage.png" />
+    <Content Include="Ci.Template.Library\__TemplateIcon.png" />
+    <Content Include="Ci.Template.Service\Ci.Template.Service.csproj" />
+    <Content Include="Ci.Template.Service\Ci.Template.Service.vstemplate" />
+    <Content Include="Ci.Template.Service\__PreviewImage.png" />
+    <Content Include="Ci.Template.Service\__TemplateIcon.png" />
+    <Content Include="Ci.Template.Web\Ci.Template.Web.csproj" />
+    <Content Include="Ci.Template.Web\Content\bootstrap.css" />
+    <Content Include="Ci.Template.Web\Content\bootstrap.min.css" />
+    <Content Include="Ci.Template.Web\Content\materialize\css\index.styles.css" />
+    <Content Include="Ci.Template.Web\Content\materialize\css\materialize.css" />
+    <Content Include="Ci.Template.Web\Content\materialize\css\materialize.min.css" />
+    <Content Include="Ci.Template.Web\Content\materialize\font\material-design-icons\LICENSE.txt" />
+    <Content Include="Ci.Template.Web\Content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
+    <Content Include="Ci.Template.Web\Content\Site.css" />
+    <Content Include="Ci.Template.Web\favicon.ico" />
+    <Content Include="Ci.Template.Web\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Ci.Template.Web\Global.asax" />
+    <Content Include="Ci.Template.Web\Images\background1.jpg" />
+    <Content Include="Ci.Template.Web\Images\background2.jpg" />
+    <Content Include="Ci.Template.Web\Images\background3.jpg" />
+    <Content Include="Ci.Template.Web\Images\ground-green.png" />
+    <Content Include="Ci.Template.Web\Images\t-satellite-hero.png" />
+    <Content Include="Ci.Template.Web\Images\type-full-white-2.png" />
+    <Content Include="Ci.Template.Web\Ci.Template.Web.vstemplate" />
+    <Content Include="Ci.Template.Web\Scripts\bootstrap.js" />
+    <Content Include="Ci.Template.Web\Scripts\bootstrap.min.js" />
+    <Content Include="Ci.Template.Web\Scripts\demo\init.js" />
+    <Content Include="Ci.Template.Web\Scripts\jquery-2.2.4.intellisense.js" />
+    <Content Include="Ci.Template.Web\Scripts\jquery-2.2.4.js" />
+    <Content Include="Ci.Template.Web\Scripts\jquery-2.2.4.min.js" />
+    <Content Include="Ci.Template.Web\Scripts\laurenz.js" />
+    <Content Include="Ci.Template.Web\Scripts\materialize\materialize.js" />
+    <Content Include="Ci.Template.Web\Scripts\materialize\materialize.min.js" />
+    <Content Include="Ci.Template.Web\Scripts\modernizr-2.8.3.js" />
+    <Content Include="Ci.Template.Web\Scripts\particles.min.js" />
+    <Content Include="Ci.Template.Web\Scripts\respond.js" />
+    <Content Include="Ci.Template.Web\Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Ci.Template.Web\Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Ci.Template.Web\Scripts\respond.min.js" />
+    <Content Include="Ci.Template.Web\Scripts\scrollreveal.min.js" />
+    <Content Include="Ci.Template.Web\__PreviewImage.png" />
+    <Content Include="Ci.Template.Web\__TemplateIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,155 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Ci.Template.Web</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Ci.Template.Web</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Ci.Template.Web.csproj" File="Ci.Template.Web.csproj" ReplaceParameters="true">
+      <Folder Name="App_Data" TargetFolderName="App_Data" />
+      <Folder Name="App_Start" TargetFolderName="App_Start">
+        <ProjectItem ReplaceParameters="true" TargetFileName="RouteConfig.cs">RouteConfig.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Content" TargetFolderName="Content">
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.css">bootstrap.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
+        <Folder Name="materialize" TargetFolderName="materialize">
+          <Folder Name="css" TargetFolderName="css">
+            <ProjectItem ReplaceParameters="true" TargetFileName="index.styles.css">index.styles.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="materialize.css">materialize.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="materialize.min.css">materialize.min.css</ProjectItem>
+          </Folder>
+          <Folder Name="font" TargetFolderName="font">
+            <Folder Name="material-design-icons" TargetFolderName="material-design-icons">
+              <ProjectItem ReplaceParameters="true" TargetFileName="LICENSE.txt">LICENSE.txt</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Material-Design-Icons.eot">Material-Design-Icons.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Material-Design-Icons.svg">Material-Design-Icons.svg</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Material-Design-Icons.ttf">Material-Design-Icons.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Material-Design-Icons.woff">Material-Design-Icons.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Material-Design-Icons.woff2">Material-Design-Icons.woff2</ProjectItem>
+            </Folder>
+            <Folder Name="roboto" TargetFolderName="roboto">
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Bold.eot">Roboto-Bold.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Bold.ttf">Roboto-Bold.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Bold.woff">Roboto-Bold.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Bold.woff2">Roboto-Bold.woff2</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Light.eot">Roboto-Light.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Light.ttf">Roboto-Light.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Light.woff">Roboto-Light.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Light.woff2">Roboto-Light.woff2</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Medium.eot">Roboto-Medium.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Medium.ttf">Roboto-Medium.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Medium.woff">Roboto-Medium.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Medium.woff2">Roboto-Medium.woff2</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Regular.eot">Roboto-Regular.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Regular.ttf">Roboto-Regular.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Regular.woff">Roboto-Regular.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Regular.woff2">Roboto-Regular.woff2</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Thin.eot">Roboto-Thin.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Thin.ttf">Roboto-Thin.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Thin.woff">Roboto-Thin.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Thin.woff2">Roboto-Thin.woff2</ProjectItem>
+            </Folder>
+          </Folder>
+          <Folder Name="fonts" TargetFolderName="fonts">
+            <Folder Name="roboto" TargetFolderName="roboto">
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Bold.eot">Roboto-Bold.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Bold.ttf">Roboto-Bold.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Bold.woff">Roboto-Bold.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Bold.woff2">Roboto-Bold.woff2</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Light.eot">Roboto-Light.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Light.ttf">Roboto-Light.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Light.woff">Roboto-Light.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Light.woff2">Roboto-Light.woff2</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Medium.eot">Roboto-Medium.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Medium.ttf">Roboto-Medium.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Medium.woff">Roboto-Medium.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Medium.woff2">Roboto-Medium.woff2</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Regular.eot">Roboto-Regular.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Regular.ttf">Roboto-Regular.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Regular.woff">Roboto-Regular.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Regular.woff2">Roboto-Regular.woff2</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Thin.eot">Roboto-Thin.eot</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Thin.ttf">Roboto-Thin.ttf</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Thin.woff">Roboto-Thin.woff</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Roboto-Thin.woff2">Roboto-Thin.woff2</ProjectItem>
+            </Folder>
+          </Folder>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Site.css">Site.css</ProjectItem>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="HomeController.cs">HomeController.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+      <Folder Name="fonts" TargetFolderName="fonts">
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.eot">glyphicons-halflings-regular.eot</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.svg">glyphicons-halflings-regular.svg</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.ttf">glyphicons-halflings-regular.ttf</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.woff">glyphicons-halflings-regular.woff</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <Folder Name="Images" TargetFolderName="Images">
+        <ProjectItem ReplaceParameters="false" TargetFileName="background1.jpg">background1.jpg</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="background2.jpg">background2.jpg</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="background3.jpg">background3.jpg</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="ground-green.png">ground-green.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="t-satellite-hero.png">t-satellite-hero.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="type-full-white-2.png">type-full-white-2.png</ProjectItem>
+      </Folder>
+      <Folder Name="Models" TargetFolderName="Models" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.js">bootstrap.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js">bootstrap.min.js</ProjectItem>
+        <Folder Name="demo" TargetFolderName="demo">
+          <ProjectItem ReplaceParameters="true" TargetFileName="init.js">init.js</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-2.2.4.intellisense.js">jquery-2.2.4.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-2.2.4.js">jquery-2.2.4.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-2.2.4.min.js">jquery-2.2.4.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-2.2.4.min.map">jquery-2.2.4.min.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="laurenz.js">laurenz.js</ProjectItem>
+        <Folder Name="materialize" TargetFolderName="materialize">
+          <ProjectItem ReplaceParameters="true" TargetFileName="materialize.js">materialize.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="materialize.min.js">materialize.min.js</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-2.8.3.js">modernizr-2.8.3.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="particles.min.js">particles.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="respond.js">respond.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="respond.matchmedia.addListener.js">respond.matchmedia.addListener.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="respond.matchmedia.addListener.min.js">respond.matchmedia.addListener.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="respond.min.js">respond.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="scrollreveal.min.js">scrollreveal.min.js</ProjectItem>
+      </Folder>
+      <Folder Name="Views" TargetFolderName="Views">
+        <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+        <Folder Name="Home" TargetFolderName="Home">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Demo.cshtml">Demo.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="web.config">web.config</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
