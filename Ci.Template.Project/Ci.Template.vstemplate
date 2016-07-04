@@ -16,16 +16,16 @@
   <TemplateContent>
     <ProjectCollection>
       <SolutionFolder Name="Ci.Template">
-        <ProjectTemplateLink ProjectName="Ci.Template.Admin">
+        <ProjectTemplateLink ProjectName="$projectname$.Admin">
           Ci.Template.Admin\Ci.Template.Admin.vstemplate
         </ProjectTemplateLink>
-        <ProjectTemplateLink ProjectName="Ci.Template.Library">
+        <ProjectTemplateLink ProjectName="$projectname$.Library">
           Ci.Template.Library\Ci.Template.Library.vstemplate
         </ProjectTemplateLink>
-        <ProjectTemplateLink ProjectName="Ci.Template.Service">
+        <ProjectTemplateLink ProjectName="$projectname$.Service">
           Ci.Template.Service\Ci.Template.Service.vstemplate
         </ProjectTemplateLink>
-        <ProjectTemplateLink ProjectName="Ci.Template.Web">
+        <ProjectTemplateLink ProjectName="$projectname$.Web">
           Ci.Template.Web\Ci.Template.Web.vstemplate
         </ProjectTemplateLink>
       </SolutionFolder>
