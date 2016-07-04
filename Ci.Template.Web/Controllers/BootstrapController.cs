@@ -4,16 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Ci.Mms.Admin.Controllers
+namespace Ci.Template.Web.Controllers
 {
-    public class HomeController : Controller
+    public class BootstrapController : Controller
     {
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult Demo()
         {
             return View();
         }
