@@ -155,6 +155,7 @@
     <None Include="Ci.Template.Web\Web.Debug.config" />
     <None Include="Ci.Template.Web\Web.Release.config" />
     <None Include="ProjectTemplate.csproj" />
+    <None Include="InitialSolution.ps1" />
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="Ci.Template.vstemplate" />
