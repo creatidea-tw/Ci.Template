@@ -1,34 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="2.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
-  <TemplateData>
-    <Name>Ci.Template</Name>
-    <Description>Ci.Template</Description>
-    <ProjectType>CSharp</ProjectType>
-    <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
-    <SortOrder>1000</SortOrder>
-    <TemplateID>9821fe76-92f3-4969-961a-b02664c58aa0</TemplateID>
-    <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>Ci.Template</DefaultName>
-    <ProvideDefaultName>true</ProvideDefaultName>
-    <Icon>__TemplateIcon.png</Icon>
-    <PreviewImage>__PreviewImage.png</PreviewImage>
-  </TemplateData>
-  <TemplateContent>
-    <ProjectCollection>
-      <SolutionFolder Name="Ci.Template">
-        <ProjectTemplateLink ProjectName="$projectname$.Admin">
-          Ci.Template.Admin\Ci.Template.Admin.vstemplate
-        </ProjectTemplateLink>
-        <ProjectTemplateLink ProjectName="$projectname$.Library">
-          Ci.Template.Library\Ci.Template.Library.vstemplate
-        </ProjectTemplateLink>
-        <ProjectTemplateLink ProjectName="$projectname$.Service">
-          Ci.Template.Service\Ci.Template.Service.vstemplate
-        </ProjectTemplateLink>
-        <ProjectTemplateLink ProjectName="$projectname$.Web">
-          Ci.Template.Web\Ci.Template.Web.vstemplate
-        </ProjectTemplateLink>
-      </SolutionFolder>
-    </ProjectCollection>
-  </TemplateContent>
+    <TemplateData>
+        <Name>Ci.Template</Name>
+        <Description>Ci.Template</Description>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+        <SortOrder>0</SortOrder>
+        <TemplateID>9821fe76-92f3-4969-961a-b02664c58aa0</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>Ci.Template</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <Icon>__TemplateIcon.png</Icon>
+        <PreviewImage>__PreviewImage.png</PreviewImage>
+    </TemplateData>
+    <TemplateContent>
+        <ProjectCollection>
+            <ProjectTemplateLink ProjectName="$projectname$.Admin">
+                Ci.Template.Admin\Ci.Template.Admin.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$projectname$.Library">
+                Ci.Template.Library\Ci.Template.Library.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$projectname$.Service">
+                Ci.Template.Service\Ci.Template.Service.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$projectname$.Web">
+                Ci.Template.Web\Ci.Template.Web.vstemplate
+            </ProjectTemplateLink>
+        </ProjectCollection>
+    </TemplateContent>
 </VSTemplate>

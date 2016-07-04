@@ -154,7 +154,6 @@
     <None Include="Ci.Template.Web\Web.config" />
     <None Include="Ci.Template.Web\Web.Debug.config" />
     <None Include="Ci.Template.Web\Web.Release.config" />
-    <None Include="Class1.cs" />
     <None Include="ProjectTemplate.csproj" />
   </ItemGroup>
   <ItemGroup>
