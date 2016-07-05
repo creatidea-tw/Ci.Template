@@ -13,7 +13,27 @@ namespace Ci.Template.Web.Controllers
             return View();
         }
 
-        public ActionResult Landing()
+        public ActionResult Starter()
+        {
+            return View();
+        }
+
+        public ActionResult Theme()
+        {
+            return View();
+        }
+
+        public ActionResult Grids()
+        {
+            return View();
+        }
+
+        public ActionResult Jumbotron()
+        {
+            return View();
+        }
+
+        public ActionResult NarrowJumbotron()
         {
             return View();
         }

@@ -177,6 +177,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\demo\init.js" />
+    <Content Include="Scripts\ie10-viewport-bug-workaround.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\laurenz.js" />
@@ -210,8 +211,12 @@
     <Content Include="Scripts\jquery-2.2.4.min.map" />
     <Content Include="Views\Bootstrap\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Bootstrap\Landing.cshtml" />
     <Content Include="Views\Shared\_BootstrapLayout.cshtml" />
+    <Content Include="Views\Bootstrap\Starter.cshtml" />
+    <Content Include="Views\Bootstrap\Theme.cshtml" />
+    <Content Include="Views\Bootstrap\Grids.cshtml" />
+    <Content Include="Views\Bootstrap\Jumbotron.cshtml" />
+    <Content Include="Views\Bootstrap\NarrowJumbotron.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

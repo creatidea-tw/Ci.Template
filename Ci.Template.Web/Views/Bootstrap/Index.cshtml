@@ -2,19 +2,42 @@
     Layout = "~/Views/Shared/_BootstrapLayout.cshtml";
 }
 
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+@*Custom styles for this template*@
+<style>
+    body {
+        padding-top: 70px;
+        padding-bottom: 30px;
+    }
+
+    .theme-dropdown .dropdown-menu {
+        position: static;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .theme-showcase > p > .btn {
+        margin: 5px 0;
+    }
+
+    .theme-showcase .navbar .container {
+        width: auto;
+    }
+</style>
+
 <div class="row">
     <h2>Using the framework</h2>
     <div class="col-md-9">
         <div class="row bs-examples">
             <div class="col-xs-6 col-md-4">
-                <a class="thumbnail" href="http://getbootstrap.com/examples/starter-template/">
+                <a class="thumbnail" href="@Url.Action("Starter")">
                     <img src="http://getbootstrap.com/examples/screenshots/starter-template.jpg" alt="Starter template example">
                 </a>
                 <h3>Starter template</h3>
                 <p>Nothing but the basics: compiled CSS and JavaScript along with a container.</p>
             </div>
             <div class="col-xs-6 col-md-4">
-                <a class="thumbnail" href="http://getbootstrap.com/examples/theme/">
+                <a class="thumbnail" href="@Url.Action("Theme")">
                     <img src="http://getbootstrap.com/examples/screenshots/theme.jpg" alt="Bootstrap theme example">
                 </a>
                 <h3>Bootstrap theme</h3>
@@ -22,14 +45,15 @@
             </div>
             <div class="clearfix visible-xs"></div>
             <div class="col-xs-6 col-md-4">
-                <a class="thumbnail" href="http://getbootstrap.com/examples/grid/">
+                <a class="thumbnail" href="@Url.Action("Grids")">
+       >
                     <img src="http://getbootstrap.com/examples/screenshots/grid.jpg" alt="Multiple grids example">
                 </a>
                 <h3>Grids</h3>
                 <p>Multiple examples of grid layouts with all four tiers, nesting, and more.</p>
             </div>
             <div class="col-xs-6 col-md-4">
-                <a class="thumbnail" href="http://getbootstrap.com/examples/jumbotron/">
+                <a class="thumbnail" href="@Url.Action("Jumbotron")">
                     <img src="http://getbootstrap.com/examples/screenshots/jumbotron.jpg" alt="Jumbotron example">
                 </a>
                 <h3>Jumbotron</h3>
@@ -37,7 +61,7 @@
             </div>
             <div class="clearfix visible-xs"></div>
             <div class="col-xs-6 col-md-4">
-                <a class="thumbnail" href="http://getbootstrap.com/examples/jumbotron-narrow/">
+                <a class="thumbnail" href="@Url.Action("NarrowJumbotron")">
                     <img src="http://getbootstrap.com/examples/screenshots/jumbotron-narrow.jpg" alt="Narrow jumbotron example">
                 </a>
                 <h3>Narrow jumbotron</h3>
