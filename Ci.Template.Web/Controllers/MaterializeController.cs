@@ -10,12 +10,12 @@
     {
         public ActionResult Index()
         {
-            return this.View();
+            return View();
         }
 
         public ActionResult Landing()
         {
-            return this.View();
+            return View();
         }
     }
 }
