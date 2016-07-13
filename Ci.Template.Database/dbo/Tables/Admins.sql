@@ -7,7 +7,6 @@
     [DeleteTime]    DATETIME         NULL,
     [LastLoginTime] DATETIME         NULL,
     [LastLoginIp]   NVARCHAR (MAX)   NULL,
-    [MuseumId]      UNIQUEIDENTIFIER NULL,
     CONSTRAINT [PK_Admins] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
