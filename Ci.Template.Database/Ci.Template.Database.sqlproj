@@ -65,7 +65,6 @@
   <ItemGroup>
     <Build Include="dbo\Tables\AdminRoleRelations.sql" />
     <Build Include="dbo\Tables\Admins.sql" />
-    <Build Include="dbo\Tables\MenuLangs.sql" />
     <Build Include="dbo\Tables\Menus.sql" />
     <Build Include="dbo\Tables\RoleMenuRelations.sql" />
     <Build Include="dbo\Tables\Roles.sql" />

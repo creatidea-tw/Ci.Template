@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commons\Keys.cs" />
-    <Compile Include="Enums\LanguageType.cs" />
     <Compile Include="Enums\MenuType.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

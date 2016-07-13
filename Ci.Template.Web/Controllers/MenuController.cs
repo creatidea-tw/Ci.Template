@@ -103,6 +103,7 @@ namespace Ci.Template.Web.Controllers
         /// <param name="model">The model.</param>
         /// <returns></returns>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Update(Menu model)
         {
             if (ModelState.IsValid)
@@ -140,35 +141,6 @@ namespace Ci.Template.Web.Controllers
             TempData["alert"] = result.Message;
 
             return RedirectToAction("Index", new { typeOpt });
-        }
-
-
-        /// <summary>
-        /// 新增或修改語言
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <param name="lang">The language.</param>
-        /// <param name="typeOpt">The type opt.</param>
-        /// <returns></returns>
-        public ActionResult ModifyLang(Guid id, LanguageType lang, MenuType typeOpt = MenuService.DefaultType)
-        {
-            var mainData = menuService.GetById(id);
-            if (mainData == null)
-                return HttpNotFound();
-
-            var data = menuService.GetLangById(id, (int)lang);
-            if (data == null)
-            {
-                // 新增時，預設MenuId、Lang
-                data = new MenuLang
-                {
-                    MenuId = id,
-                    Lang = (int)lang
-                };
-            }
-
-            ViewBag.TypeOpt = typeOpt;
-            return View(data);
         }
 
         /// <summary>

@@ -87,41 +87,6 @@ namespace Ci.Template.Service
                 // 角色是否包含選單
                 node.IsChecked = (menuCheck != null) && menuCheck.Any(x => x.Id == menu.Id);
 
-                // 尋找語言-三種狀態
-                #region "尋找語言"
-                if (type != (int)MenuType.BackStage && chooseMenu == 0)
-                {
-                    var langList = new List<TreeLang>();
-
-                    foreach (int i in Enum.GetValues(typeof(LanguageType)))
-                    {
-                        var lang = new TreeLang();
-                        lang.Lang = i;
-
-                        var firstOrDefault = menu.MenuLangs.FirstOrDefault(x => x.Lang == i);
-                        if (firstOrDefault != null)
-                        {
-                            if (firstOrDefault.IsShow)
-                            {
-                                lang.Status = (int)LanguageStatus.DataShow;
-                            }
-                            else
-                            {
-                                lang.Status = (int)LanguageStatus.DataHide;
-                            }
-                        }
-                        else
-                        {
-                            lang.Status = (int)LanguageStatus.NoData;
-                        }
-
-                        langList.Add(lang);
-                    }
-
-                    node.TreeLangList = langList;
-                }
-                #endregion
-
                 // 若有子層繼續遞迴
                 #region "遞迴"
                 var child = Db.Menus.Where(x => x.ParentId == menu.Id && x.IsDelete == false);
