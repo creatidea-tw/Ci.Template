@@ -115,7 +115,6 @@ namespace Ci.Template.Service
         {
             IEnumerable<Menu> menuData =
                 Db.Menus.Where(x => x.ParentId == null && x.Type == type && x.IsDelete == false && x.IsMenu)
-                    .Include(x => x.MenuLangs)
                     .OrderBy(x => x.Sort)
                     .ToList();
 
@@ -130,13 +129,8 @@ namespace Ci.Template.Service
                 var node = new TreeViewModel();
                 node.Id = menu.Id;
                 node.Url = !string.IsNullOrEmpty(menu.Url) ? menu.Url : (routeUrl + "/" + menu.Controller + "/" + menu.Action);
-
-                var menuLang = menu.MenuLangs.FirstOrDefault(x => x.Lang == lang);
-                if (menuLang != null)
-                {
-                    node.Name = menuLang.Name;
-                    tree.Add(node);
-                }
+                node.Name = menu.NativeName;
+                tree.Add(node);
             }
 
             return tree;
@@ -292,20 +286,6 @@ namespace Ci.Template.Service
             return ciResult;
         }
 
-
-        /// <summary>
-        /// 取得語言資料
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <param name="lang">The language.</param>
-        /// <returns></returns>
-        public MenuLang GetLangById(Guid id, int lang)
-        {
-            MenuLang data = Db.Menus.FirstOrDefault(x => x.Id == id && x.IsDelete == false)?
-                              .MenuLangs.FirstOrDefault(x => x.Lang == lang);
-            return data;
-        }
-
         /// <summary>
         /// 取得選單名稱 (前台)
         /// </summary>
@@ -314,66 +294,13 @@ namespace Ci.Template.Service
         /// <returns></returns>
         public string GetNameByController(string controllerName, int lang)
         {
-            string data = Db.Menus.FirstOrDefault(x => x.Controller == controllerName.Trim()
-                                                    && x.IsDelete == false
-                                                    && x.Type == (int)MenuType.FrontStage)?
-                              .MenuLangs.FirstOrDefault(x => x.Lang == lang)?.Name;
+            string data =
+                Db.Menus.FirstOrDefault(
+                    x =>
+                    x.Controller == controllerName.Trim() && x.IsDelete == false && x.Type == (int)MenuType.FrontStage)?
+                    .NativeName;
 
             return data;
-        }
-
-        /// <summary>
-        /// 新增或修改語言資料
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        public CiResult EditLang(MenuLang model)
-        {
-            CiResult ciResult = new CiResult();
-
-            var mainData = Db.Menus.FirstOrDefault(x => x.Id == model.MenuId && x.IsDelete == false);
-            if (mainData == null)
-            {
-                ciResult.Message = "主項目不存在";
-            }
-            else
-            {
-                var langData = mainData.MenuLangs.FirstOrDefault(x => x.Lang == model.Lang);
-                if (langData == null)
-                {
-                    // 新增
-                    try
-                    {
-                        var data = new MenuLang
-                        {
-                            MenuId = model.MenuId,
-                            Lang = model.Lang,
-                            Name = model.Name.ToTrim(),
-                            IsShow = model.IsShow
-                        };
-
-                        Db.MenuLangs.Add(data);
-                        Db.SaveChanges();
-
-                        ciResult.ReturnResult = ReturnResult.Success;
-                    }
-                    catch (Exception)
-                    {
-                        ciResult.Message = string.Format("[{0}]建立失敗。", model.Name);
-                    }
-                }
-                else
-                {
-                    // 修改
-                    langData.Name = model.Name.ToTrim();
-                    langData.IsShow = model.IsShow;
-                    Db.SaveChanges();
-
-                    ciResult.ReturnResult = ReturnResult.Success;
-                }
-            }
-
-            return ciResult;
         }
     }
 }

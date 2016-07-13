@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Security.Cryptography;
     using System.Text;
+    using System.Web.Helpers;
 
     using Ci.Template.Library.Commons;
     using Ci.Template.Library.Models;
@@ -20,34 +21,7 @@
     public class AccountService : BaseService
     {
         public int PageSize = 10;
-
-        /// <summary>
-        /// 加密  
-        /// </summary>
-        private string Hash_sha1(string input)
-        {
-            var sha1 = new SHA1CryptoServiceProvider();
-
-            byte[] bytes = sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
-            var sb = new StringBuilder();
-            foreach (byte b in bytes)
-            {
-                var hex = b.ToString("x2");
-                sb.Append(hex);
-            }
-            return sb.ToString();
-
-            //return Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(input)));
-        }
-
-
-        private string Hash_sha256(string input)
-        {
-            // Password+Salt
-            const string _salt = "mntstmswojhos";
-            SHA256 sha256 = new SHA256CryptoServiceProvider();
-            return Convert.ToBase64String(sha256.ComputeHash(Encoding.Default.GetBytes(input + _salt)));
-        }
+        private const string Salt = "8557F449-E554-4147-BCD1-560AA3CFB849";
 
         /// <summary>
         /// 登入-驗證帳號密碼
@@ -58,8 +32,8 @@
         /// <returns>userId</returns>
         public Admin CheckLogin(string account, string password, string ip = "")
         {
-            var passHash = this.Hash_sha1(password);
-            var admin = this.Db.Admins.FirstOrDefault(x => x.Account == account && x.Password == passHash && x.IsDelete == false);
+            var passHash = Crypto.SHA256(password + Salt);
+            var admin = Db.Admins.FirstOrDefault(x => x.Account == account && x.Password == passHash && x.IsDelete == false);
 
             // 更新登入時間
             if (admin != null)
@@ -67,7 +41,7 @@
                 admin.LastLoginTime = DateTime.Now;
                 admin.LastLoginIp = ip;
 
-                this.Db.SaveChanges();
+                Db.SaveChanges();
             }
 
             return admin;
@@ -76,18 +50,19 @@
         /// <summary>
         /// 使用者是否存在
         /// </summary>
-        /// <param name="account">The account.</param>
-        /// <param name="id">The identifier.</param>
+        /// <param name="account">欲檢查之帳號.</param>
+        /// <param name="id">操作者本身Id.</param>
         /// <returns>bool</returns>
         public bool CheckName(string account, Guid? id)
         {
-            IEnumerable<Admin> admin = this.Db.Admins;
+            IQueryable<Admin> admin = Db.Admins;
+
             // 排除自己
             if (id != null)
             {
                 admin = admin.Where(x => x.Id != id);
                 // 查無帳號
-                if (this.Db.Admins.Find(id) == null)
+                if (Db.Admins.Find(id) == null)
                 {
                     return true;
                 }
@@ -108,7 +83,7 @@
         /// </returns>
         public bool CheckPassword(string oldPassword, string password)
         {
-            var passHash = this.Hash_sha1(password);
+            var passHash = Crypto.SHA256(password + Salt);
 
             return (oldPassword == passHash);
         }
@@ -189,20 +164,20 @@
 
             try
             {
-                var exist = this.CheckName(account, null);
+                var exist = CheckName(account, null);
                 if (!exist)
                 {
-                    var passHash = this.Hash_sha1(password);
+                    var passHash = Crypto.SHA256(password + Salt);
                     var data = new Admin
                     {
                         Id = Guid.NewGuid(),
                         Account = account,
                         Password = passHash,
-                        CreateTime = DateTime.UtcNow,
+                        CreateTime = DateTime.Now,
                         IsDelete = false
                     };
-                    this.Db.Admins.Add(data);
-                    this.Db.SaveChanges();
+                    Db.Admins.Add(data);
+                    Db.SaveChanges();
 
                     ciResult.Data = data.Id;
                     ciResult.Message = string.Format("[{0}]帳號新增成功。", data.Account);
@@ -231,15 +206,15 @@
         {
             CiResult ciResult = new CiResult();
 
-            var passHash = this.Hash_sha1(password);
-            Admin data = this.Db.Admins.Find(id);
+            var passHash = Crypto.SHA256(password + Salt);
+            Admin data = Db.Admins.Find(id);
 
             if (data != null)
             {
                 try
                 {
                     data.Password = passHash;
-                    this.Db.SaveChanges();
+                    Db.SaveChanges();
 
                     ciResult.Message = string.Format("[{0}]密碼修改成功。", data.Account);
                     ciResult.ReturnResult = ReturnResult.Success;
@@ -267,17 +242,17 @@
         {
             CiResult ciResult = new CiResult();
 
-            Admin data = this.Db.Admins.Find(id);
+            Admin data = Db.Admins.Find(id);
 
             if (data != null)
             {
                 try
                 {
-                    var exist = this.CheckName(account, id);
+                    var exist = CheckName(account, id);
                     if (!exist)
                     {
                         data.Account = account;
-                        this.Db.SaveChanges();
+                        Db.SaveChanges();
 
                         ciResult.Message = string.Format("[{0}]帳號修改成功。", data.Account);
                         ciResult.ReturnResult = ReturnResult.Success;
@@ -310,7 +285,7 @@
         {
             CiResult ciResult = new CiResult();
 
-            var data = this.Db.Admins.Find(id);
+            var data = Db.Admins.Find(id);
             if (data != null)
             {
                 try
@@ -321,12 +296,12 @@
                     {
                         if (c.IsChecked)
                         {
-                            var role = this.Db.Roles.Find(c.Id);
+                            var role = Db.Roles.Find(c.Id);
                             data.Roles.Add(role);
                         }
                     }
 
-                    this.Db.SaveChanges();
+                    Db.SaveChanges();
 
                     ciResult.ReturnResult = ReturnResult.Success;
                 }
@@ -352,7 +327,7 @@
         {
             CiResult ciResult = new CiResult();
 
-            Admin data = this.Db.Admins.Find(id);
+            Admin data = Db.Admins.Find(id);
 
             if (data != null)
             {

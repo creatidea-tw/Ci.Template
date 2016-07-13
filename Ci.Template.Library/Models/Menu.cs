@@ -17,7 +17,6 @@ namespace Ci.Template.Library.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Menu()
         {
-            this.MenuLangs = new HashSet<MenuLang>();
             this.ChildMenus = new HashSet<Menu>();
             this.Roles = new HashSet<Role>();
         }
@@ -34,8 +33,6 @@ namespace Ci.Template.Library.Models
         public bool IsDelete { get; set; }
         public string NativeName { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MenuLang> MenuLangs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Menu> ChildMenus { get; set; }
         public virtual Menu ParentMenu { get; set; }

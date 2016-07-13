@@ -143,27 +143,6 @@ namespace Ci.Template.Web.Controllers
             return RedirectToAction("Index", new { typeOpt });
         }
 
-        /// <summary>
-        /// 新增或修改語言post
-        /// </summary>
-        /// <param name="model">The model.</param>
-        /// <returns></returns>
-        [HttpPost]
-        public ActionResult ModifyLang(MenuLang model)
-        {
-            CiResult result = menuService.EditLang(model);
-            TempData["alert"] = result.Message;
-
-            if (result.ReturnResult == ReturnResult.Success)
-            {
-                MenuType typeOpt = (MenuType)menuService.GetById(model.MenuId).Type;
-              
-                return RedirectToAction("Index", new { typeOpt, currentId = model.MenuId });
-            }
-
-            return View(model);
-        }
-
         #region tree
 
         /// <summary>

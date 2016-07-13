@@ -26,7 +26,6 @@ namespace Ci.Template.Library.Models
         }
     
         public virtual DbSet<Admin> Admins { get; set; }
-        public virtual DbSet<MenuLang> MenuLangs { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
     }

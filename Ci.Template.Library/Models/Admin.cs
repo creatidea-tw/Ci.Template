@@ -28,7 +28,6 @@ namespace Ci.Template.Library.Models
         public Nullable<System.DateTime> DeleteTime { get; set; }
         public Nullable<System.DateTime> LastLoginTime { get; set; }
         public string LastLoginIp { get; set; }
-        public Nullable<System.Guid> MuseumId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Role> Roles { get; set; }

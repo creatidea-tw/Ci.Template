@@ -12,8 +12,6 @@
 
     using Creatidea.Library.Results;
 
-    using MenuSample.Controllers;
-
     using Microsoft.AspNet.Identity;
     using Microsoft.Owin.Security;
 
@@ -58,16 +56,7 @@
                 if (admin != null)
                 {
                     Session.RemoveAll();
-
-                   // Guid MuseumId = IdentityTool.Authentication(AuthenticationManager, admin, false);
-
-                    // 登入時紀錄 博物館id
-                    //Session["museumId"] = MuseumId;
-                    //UserMuseumId = MuseumId;
-
                     return RedirectToAction("Index", "Home");
-
-
                 }
             }
 
@@ -103,8 +92,6 @@
                 string[] auth = appTypes.Select(at => at.AuthenticationType).ToArray();
                 AuthenticationManager.SignOut(auth);
             }
-
-            string[] cookies2 = Request.Cookies.AllKeys;
 
             return RedirectToAction("Login");
         }

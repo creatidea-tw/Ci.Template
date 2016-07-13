@@ -25,7 +25,6 @@ namespace Ci.Template.Library.Models
         public string Name { get; set; }
         public Nullable<int> Sort { get; set; }
         public bool IsDelete { get; set; }
-        public System.Guid MuseumId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Admin> Admins { get; set; }

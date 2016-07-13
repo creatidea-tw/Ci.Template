@@ -3,7 +3,6 @@
     [Name]     NVARCHAR (50)    NULL,
     [Sort]     INT              NULL,
     [IsDelete] BIT              CONSTRAINT [DF__Roles__IsDelete__640DD89F] DEFAULT ((0)) NOT NULL,
-    [MuseumId] UNIQUEIDENTIFIER NOT NULL,
     CONSTRAINT [PK_Roles] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

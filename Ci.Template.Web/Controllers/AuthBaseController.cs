@@ -1,17 +1,9 @@
-﻿using System;
-using System.Web.Mvc;
-using System.Security.Claims;
-using System.Collections.Generic;
-
-namespace MenuSample.Controllers
+﻿namespace Ci.Template.Web.Controllers
 {
-    using Ci.Template.Web.Controllers;
+    using System.Web.Mvc;
 
     //[Authorize]
-    //[AutoRolesAuthorize]
     public class AuthBaseController : BaseController
     {
-
-
     }
 }

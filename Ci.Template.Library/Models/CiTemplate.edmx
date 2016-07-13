@@ -25,18 +25,6 @@
           <Property Name="DeleteTime" Type="datetime" />
           <Property Name="LastLoginTime" Type="datetime" />
           <Property Name="LastLoginIp" Type="nvarchar(max)" />
-          <Property Name="MuseumId" Type="uniqueidentifier" />
-        </EntityType>
-        <EntityType Name="MenuLangs">
-          <Key>
-            <PropertyRef Name="MenuId" />
-            <PropertyRef Name="Lang" />
-          </Key>
-          <Property Name="MenuId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Lang" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Contents" Type="nvarchar(max)" />
-          <Property Name="IsShow" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Menus">
           <Key>
@@ -70,7 +58,6 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Sort" Type="int" />
           <Property Name="IsDelete" Type="bit" Nullable="false" />
-          <Property Name="MuseumId" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <Association Name="FK_AdminRoleRelations_Admins1">
           <End Role="Admins" Type="Self.Admins" Multiplicity="1" />
@@ -93,18 +80,6 @@
             </Principal>
             <Dependent Role="AdminRoleRelations">
               <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MenuLangs_Menus">
-          <End Role="Menus" Type="Self.Menus" Multiplicity="1" />
-          <End Role="MenuLangs" Type="Self.MenuLangs" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Menus">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MenuLangs">
-              <PropertyRef Name="MenuId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -147,7 +122,6 @@
         <EntityContainer Name="CiTemplateModelStoreContainer">
           <EntitySet Name="AdminRoleRelations" EntityType="Self.AdminRoleRelations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MenuLangs" EntityType="Self.MenuLangs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RoleMenuRelations" EntityType="Self.RoleMenuRelations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
@@ -158,10 +132,6 @@
           <AssociationSet Name="FK_AdminRoleRelations_Roles" Association="Self.FK_AdminRoleRelations_Roles">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="AdminRoleRelations" EntitySet="AdminRoleRelations" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MenuLangs_Menus" Association="Self.FK_MenuLangs_Menus">
-            <End Role="Menus" EntitySet="Menus" />
-            <End Role="MenuLangs" EntitySet="MenuLangs" />
           </AssociationSet>
           <AssociationSet Name="FK_Menus_Menus" Association="Self.FK_Menus_Menus">
             <End Role="Menus" EntitySet="Menus" />
@@ -192,20 +162,7 @@
           <Property Name="DeleteTime" Type="DateTime" Precision="3" />
           <Property Name="LastLoginTime" Type="DateTime" Precision="3" />
           <Property Name="LastLoginIp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MuseumId" Type="Guid" />
           <NavigationProperty Name="Roles" Relationship="Self.AdminRoleRelations" FromRole="Admins" ToRole="Roles" />
-        </EntityType>
-        <EntityType Name="MenuLang">
-          <Key>
-            <PropertyRef Name="MenuId" />
-            <PropertyRef Name="Lang" />
-          </Key>
-          <Property Name="MenuId" Type="Guid" Nullable="false" />
-          <Property Name="Lang" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IsShow" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Menu" Relationship="Self.FK_MenuLangs_Menus" FromRole="MenuLangs" ToRole="Menus" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -221,7 +178,6 @@
           <Property Name="IsMenu" Type="Boolean" Nullable="false" />
           <Property Name="Sort" Type="Int32" Nullable="false" />
           <Property Name="IsDelete" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="MenuLangs" Relationship="Self.FK_MenuLangs_Menus" FromRole="Menus" ToRole="MenuLangs" />
           <NavigationProperty Name="ChildMenus" Relationship="Self.FK_Menus_Menus" FromRole="Menus" ToRole="Menus1" />
           <NavigationProperty Name="ParentMenu" Relationship="Self.FK_Menus_Menus" FromRole="Menus1" ToRole="Menus" />
           <NavigationProperty Name="Roles" Relationship="Self.RoleMenuRelations" FromRole="Menus" ToRole="Roles" />
@@ -235,22 +191,9 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Sort" Type="Int32" />
           <Property Name="IsDelete" Type="Boolean" Nullable="false" />
-          <Property Name="MuseumId" Type="Guid" Nullable="false" />
           <NavigationProperty Name="Admins" Relationship="Self.AdminRoleRelations" FromRole="Roles" ToRole="Admins" />
           <NavigationProperty Name="Menus" Relationship="Self.RoleMenuRelations" FromRole="Roles" ToRole="Menus" />
         </EntityType>
-        <Association Name="FK_MenuLangs_Menus">
-          <End Role="Menus" Type="Self.Menu" Multiplicity="1" />
-          <End Role="MenuLangs" Type="Self.MenuLang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Menus">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MenuLangs">
-              <PropertyRef Name="MenuId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Menus_Menus">
           <End Role="Menus" Type="Self.Menu" Multiplicity="0..1" />
           <End Role="Menus1" Type="Self.Menu" Multiplicity="*" />
@@ -273,13 +216,8 @@
         </Association>
         <EntityContainer Name="CiTemplateEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admin" />
-          <EntitySet Name="MenuLangs" EntityType="Self.MenuLang" />
           <EntitySet Name="Menus" EntityType="Self.Menu" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
-          <AssociationSet Name="FK_MenuLangs_Menus" Association="Self.FK_MenuLangs_Menus">
-            <End Role="Menus" EntitySet="Menus" />
-            <End Role="MenuLangs" EntitySet="MenuLangs" />
-          </AssociationSet>
           <AssociationSet Name="FK_Menus_Menus" Association="Self.FK_Menus_Menus">
             <End Role="Menus" EntitySet="Menus" />
             <End Role="Menus1" EntitySet="Menus" />
@@ -310,18 +248,6 @@
                 <ScalarProperty Name="DeleteTime" ColumnName="DeleteTime" />
                 <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
                 <ScalarProperty Name="LastLoginIp" ColumnName="LastLoginIp" />
-                <ScalarProperty Name="MuseumId" ColumnName="MuseumId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MenuLangs">
-            <EntityTypeMapping TypeName="CiTemplateModel.MenuLang">
-              <MappingFragment StoreEntitySet="MenuLangs">
-                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
-                <ScalarProperty Name="Lang" ColumnName="Lang" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Contents" ColumnName="Contents" />
-                <ScalarProperty Name="IsShow" ColumnName="IsShow" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -349,7 +275,6 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Sort" ColumnName="Sort" />
                 <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
-                <ScalarProperty Name="MuseumId" ColumnName="MuseumId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

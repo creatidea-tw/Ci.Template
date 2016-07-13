@@ -104,9 +104,6 @@
     <Compile Include="Models\Menu.cs">
       <DependentUpon>CiTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MenuLang.cs">
-      <DependentUpon>CiTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Role.cs">
       <DependentUpon>CiTemplate.tt</DependentUpon>
     </Compile>

@@ -6,10 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="b016e05a421b498e9b97b8cafdd74d24" Name="Diagram1">
         <EntityTypeShape EntityType="CiTemplateModel.Admin" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CiTemplateModel.MenuLang" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CiTemplateModel.Menu" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CiTemplateModel.Role" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="CiTemplateModel.FK_MenuLangs_Menus" ManuallyRouted="false" />
         <AssociationConnector Association="CiTemplateModel.FK_Menus_Menus" ManuallyRouted="false" />
         <AssociationConnector Association="CiTemplateModel.AdminRoleRelations" ManuallyRouted="false" />
         <AssociationConnector Association="CiTemplateModel.RoleMenuRelations" ManuallyRouted="false" />
