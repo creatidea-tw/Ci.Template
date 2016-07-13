@@ -109,6 +109,7 @@
     <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="MenuService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ci.Template.Library\Ci.Template.Library.csproj">

@@ -97,11 +97,11 @@
         {
             IQueryable<Admin> data = Db.Admins.Where(x => x.IsDelete == false).OrderBy(x => x.CreateTime);
 
-            // 普通使用者看不到超級管理員
-            if (!UserHelper.IsSuperManager)
-            {
-                data = data.Where(x => x.Id != Guid.Parse(Keys.SuperManager));
-            }
+            // TODO 普通使用者看不到超級管理員
+            //if (!UserHelper.IsSuperManager)
+            //{
+            //    data = data.Where(x => x.Id != Guid.Parse(Keys.SuperManager));
+            //}
 
             var paged = data.ToPagedList(page, PageSize);
 

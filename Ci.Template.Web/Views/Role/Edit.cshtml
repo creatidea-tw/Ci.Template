@@ -1,0 +1,25 @@
+﻿@model Ci.Template.Library.ViewModels.RoleViewModel
+
+@{
+    ViewBag.Title = "編輯角色";
+}
+
+<h2>編輯角色</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+  
+        @{ Html.RenderPartial("_Body", this.Model);}
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="儲存" class="btn btn-info"/>
+                @Html.ActionLink("回列表", "Index", new { }, htmlAttributes: new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+}

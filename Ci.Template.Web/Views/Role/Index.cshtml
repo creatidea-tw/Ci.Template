@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Ci.Template.Library.Models.Role>
+
+@{
+    ViewBag.Title = "角色管理";
+}
+
+<h2>角色管理</h2>
+
+<p>
+    @Html.ActionLink("新增角色", "Create", new { }, htmlAttributes: new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+      
+        <td>
+            <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-info">編輯</a>
+            <a href="@Url.Action("Delete", new {id = item.Id})" class="btn btn-danger" onclick="return confirm('確認是否刪除此帳號');">刪除</a>
+        </td>
+    </tr>
+}
+
+</table>
