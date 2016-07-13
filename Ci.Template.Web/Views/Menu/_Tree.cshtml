@@ -1,0 +1,127 @@
+﻿@using Ci.Template.Library.Enums
+@using Ci.Template.Library.ViewModels
+
+
+<!--選單分類-->
+@if (ViewBag.TypeOpt != null)
+{
+    <div class="btn-group">
+        <button type="button" class="btn btn-default  btn-lg dropdown-toggle" data-toggle="dropdown">
+            @Enum.GetName(typeof(MenuType), ViewBag.TypeOpt)
+            <span class="caret"></span>
+        </button>
+        <ul id="kindMenu" class="dropdown-menu" role="menu">
+            @foreach (MenuType i in Enum.GetValues(typeof(MenuType)))
+            {
+                if (i != ViewBag.TypeOpt)
+                {
+                    <li>@Html.ActionLink(Enum.GetName(typeof(MenuType), i), "Index", new { typeOpt = i })</li>
+                }
+            }
+        </ul>
+    </div>
+}
+<br />
+<br />
+<!--tree-->
+<div id="TreeView">
+    @if (Model != null)
+    {
+        <ul>
+            <div class="trvw_item">
+                <span>
+                    <input id="openAll" type="button" value="全部展開" class="btn btn-sm btn-success" />
+                    <input id="closeAll" type="button" value="全部合起" class="btn btn-sm btn-success" />
+                </span>
+                <div class="trvw_ebtns">
+                    @*@if (ViewBag.TypeOpt != (int)MenuType.BackStage)
+                        {
+                            foreach (LanguageType langType in AuthBaseController.ContainLanguage)
+                            {
+                                <span class="btn-sm" style="background-color: #ccc">@langType.GetShortNames()</span>
+                            }
+                        }*@
+                </div>
+            </div>
+        </ul>
+
+        @GenerateTree(Model)
+    }
+    <br />
+    @Html.ActionLink("新增選單", "Create", new { typeOpt = ViewBag.TypeOpt }, htmlAttributes: new { @class = "btn btn-primary" })
+</div>
+
+@helper GenerateTree(IEnumerable<TreeViewModel> nodes, int level = 1)
+{
+if (nodes != null)
+{
+
+        <ul>
+            @foreach (var item in nodes)
+            {
+                // 有子層
+                string groupClass = (item.Nodes != null ? "trvw_gorup" : string.Empty); // trvw_showed
+                string selfClass = (item.Id == ViewBag.CurrentId ? "btn-info" : "btn-default ");
+                <li class="@groupClass">
+                    <div class="trvw_item">
+                        <span>
+                            @if (!string.IsNullOrEmpty(item.Name))
+                            {
+                                @Html.ActionLink(item.Name, "Update", new { id = item.Id, typeOpt = ViewBag.TypeOpt }, htmlAttributes: new { @class = "btn btn-sm " + selfClass })
+                            }
+                            <a href="@Url.Action("Create", new { typeOpt = ViewBag.TypeOpt, parentId = item.Id })" class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </a>
+                        </span>
+                        <div class="trvw_ebtns">
+
+                            @if (item.TreeLangList != null)
+                            {
+                                foreach (var lang in item.TreeLangList)
+                                {
+                                    //if (!AuthBaseController.ContainLanguage.Contains((LanguageType)lang.Lang))
+                                    //{
+                                    //    continue;
+                                    //}
+
+                                    string color = string.Empty;
+                                    string icon = string.Empty;
+
+                                    switch (lang.Status)
+                                    {
+                                        case (int)LanguageStatus.NoData:
+                                            color = "btn-primary";
+                                            icon = "glyphicon-plus";
+                                            break;
+
+                                        case (int)LanguageStatus.DataShow:
+                                            color = "btn-info";
+                                            icon = "glyphicon-pencil"; //edit
+                                            break;
+
+                                        case (int)LanguageStatus.DataHide:
+                                            color = "btn-info";
+                                            icon = "glyphicon glyphicon-ban-circle";
+                                            break;
+                                    }
+
+                                    <a href="@Url.Action("ModifyLang", new { id = item.Id, lang = lang.Lang, typeOpt = ViewBag.TypeOpt })" cla class="btn btn-sm @color">
+                                        <span class="glyphicon @icon"></span>
+                                    </a>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                    @GenerateTree(item.Nodes, level + 1)
+
+                </li>
+            }
+        </ul>
+}
+
+
+}
+
+
+

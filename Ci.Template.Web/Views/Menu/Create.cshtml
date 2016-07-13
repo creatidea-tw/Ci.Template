@@ -1,0 +1,37 @@
+﻿@model Ci.Template.Library.Models.Menu
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row">
+    <!--Tree-->
+    <div class="col-sm-4">
+        @{Html.RenderAction("_Tree", new { typeOpt = ViewBag.TypeOpt, currentId = ViewBag.CurrentId });}
+    </div>
+
+    <!--Create-->
+    <div class="col-sm-8">
+        <br />
+        <h3>新增選單</h3>
+        <br/>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+
+                @{ Html.RenderPartial("_Body", this.Model);}
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="儲存" class="btn btn-info"/>
+                        @Html.ActionLink("取消", "Index", new { typeOpt = ViewBag.TypeOpt, currentId = ViewBag.CurrentId }, htmlAttributes: new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

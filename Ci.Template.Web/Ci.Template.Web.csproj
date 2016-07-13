@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Creatidea.Library.Results, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CiResult.1.1.0\lib\Creatidea.Library.Results.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -112,6 +116,7 @@
     <Content Include="Content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\materialize-site.css" />
     <Content Include="Content\materialize\css\index.styles.css" />
+    <Content Include="Content\TreeView.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -173,6 +178,9 @@
     <Content Include="Images\background3.jpg" />
     <Content Include="Images\ground-green.png" />
     <Content Include="Images\t-satellite-hero.png" />
+    <Content Include="Images\trvw_folder_close.png" />
+    <Content Include="Images\trvw_folder_open.png" />
+    <Content Include="Images\trvw_item.png" />
     <Content Include="Images\type-full-white-2.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -190,6 +198,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\scrollreveal.min.js" />
+    <Content Include="Scripts\TreeView.js" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_MaterializeLayout.cshtml" />
@@ -200,6 +209,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BootstrapController.cs" />
     <Compile Include="Controllers\MaterializeController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -217,6 +227,14 @@
     <Content Include="Views\Bootstrap\Grids.cshtml" />
     <Content Include="Views\Bootstrap\Jumbotron.cshtml" />
     <Content Include="Views\Bootstrap\NarrowJumbotron.cshtml" />
+    <Content Include="Views\Menu\Create.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\Menu\ModifyLang.cshtml" />
+    <Content Include="Views\Menu\Update.cshtml" />
+    <Content Include="Views\Menu\_Body.cshtml" />
+    <Content Include="Views\Menu\_Tree.cshtml" />
+    <Content Include="Views\Menu\_TreeMenu.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -227,6 +245,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ci.Template.Library\Ci.Template.Library.csproj">
+      <Project>{5d1b66ad-8085-4f83-a826-aa7e6edf2069}</Project>
+      <Name>Ci.Template.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ci.Template.Service\Ci.Template.Service.csproj">
+      <Project>{60fd3265-c2e2-46d9-8635-c23866286e1d}</Project>
+      <Name>Ci.Template.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

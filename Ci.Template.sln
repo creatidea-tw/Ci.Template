@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Template.Vsix", "Ci.Temp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Template.Project", "Ci.Template.Project\Ci.Template.Project.csproj", "{155BB1EA-B8A5-4363-B5BC-5D58B9294CCC}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Ci.Template.Database", "Ci.Template.Database\Ci.Template.Database.sqlproj", "{080FAA98-AC4E-4C08-8798-450878264381}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,12 @@ Global
 		{155BB1EA-B8A5-4363-B5BC-5D58B9294CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{155BB1EA-B8A5-4363-B5BC-5D58B9294CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{155BB1EA-B8A5-4363-B5BC-5D58B9294CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{080FAA98-AC4E-4C08-8798-450878264381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{080FAA98-AC4E-4C08-8798-450878264381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{080FAA98-AC4E-4C08-8798-450878264381}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{080FAA98-AC4E-4C08-8798-450878264381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{080FAA98-AC4E-4C08-8798-450878264381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{080FAA98-AC4E-4C08-8798-450878264381}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

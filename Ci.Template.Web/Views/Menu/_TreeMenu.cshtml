@@ -1,0 +1,59 @@
+﻿@using Ci.Template.Library.ViewModels
+
+@if (Request.IsAuthenticated)
+{
+    if (Model != null)
+    {
+        @GenerateTree(Model)
+    }
+}
+
+
+@helper GenerateTree(IEnumerable<TreeViewModel> nodes, int level = 1)
+        {
+if (nodes != null)
+{
+    if (level == 1)
+    {
+        <ul class="nav navbar-nav">
+            <li class="navbar-header">
+                @{
+                    if (ViewBag.MuseumName != null)
+                    {
+                        @LinkExtensions.ActionLink(Html, ViewBag.MuseumName, "Index", "Home", new { }, new { @class = "navbar-brand" })
+                    }
+                }
+            </li>
+
+            @foreach (var item in nodes)
+            {
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="@item.Url">
+                        @item.Name
+                        @if (item.Nodes != null)
+                        {
+                            <b class="caret"></b>
+                        }
+                    </a>
+                    @GenerateTree(item.Nodes, level + 1)
+                </li>
+            }
+        </ul>
+
+    }
+    else
+    {
+            <ul class="dropdown-menu">
+                @foreach (var item in nodes)
+            {
+                    <li class="dropdown-submenu">
+                        <a href="@item.Url">@item.Name</a>
+                        @GenerateTree(item.Nodes, level + 1)
+                    </li>
+                }
+            </ul>
+    }
+
+
+}
+}
