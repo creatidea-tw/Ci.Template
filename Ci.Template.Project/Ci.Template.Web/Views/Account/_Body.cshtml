@@ -1,0 +1,30 @@
+﻿@model Ci.Template.Library.ViewModels.AccountViewModel
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<!--Role-->
+<div class="form-group">
+    <label class="control-label col-md-2">Role</label>
+    <div class="col-md-10">
+        @if (Model != null && Model.RoleCheckList != null)
+        {
+            for (int i = 0; i < Model.RoleCheckList.Count; i++)
+            {
+                @Html.HiddenFor(m => Model.RoleCheckList[i].Id)
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBoxFor(m => Model.RoleCheckList[i].IsChecked)
+                        @Html.DisplayFor(m => Model.RoleCheckList[i].Name)
+                    </label>
+                </div>
+                @*<div class="checkbox">
+                        <input value="@Model.RoleCheckList[i].Id" name="RoleCheckList[@i].Id" type="hidden">
+                        <label class="checkbox-inline">
+                            @Model.RoleCheckList[i].Name
+                            <input name="RoleCheckList[@i].Check" type="checkbox" checked="@Model.RoleCheckList[i].IsChecked" value="true">
+                        </label>
+                </div>*@
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,60 @@
+﻿@model Ci.Template.Library.ViewModels.RoleViewModel
+@using Ci.Template.Library.ViewModels
+
+
+<!--tree-->
+<div id="TreeView" style="width:230px">
+    @if (Model != null && Model.MenuCheckList != null)
+    {
+        @GenerateTree(Model.MenuCheckList)
+    }
+    <br />
+
+</div>
+
+@functions{
+    int i = 0; // 遞迴共用計數
+}
+
+@helper  GenerateTree(IEnumerable<TreeViewModel> nodes, int count = 0)
+{
+    i = count;
+    if (nodes != null)
+    {
+        <ul>
+            @foreach (var item in nodes)
+            {
+                // 有子層
+                string groupClass = (item.Nodes != null ? "trvw_gorup" : string.Empty);
+
+                <li class="@groupClass">
+                    <div class="trvw_item">
+                        <span>
+                            <input value="@item.Id" name="MenuCheckList[@i].Id" type="hidden">
+                            <div class="checkbox">
+                                <label class="">
+                                    <input name="MenuCheckList[@i].IsChecked" type="checkbox" checked="@item.IsChecked" value="true">
+                                    @item.Name
+                                    @{i += 1;}
+                                </label>
+                            </div> 
+                        </span>
+                        <div class="trvw_ebtns">                           
+                            @if (item.Nodes != null)
+                            {
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="checkAll" type="checkbox">
+                                       全選
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    @GenerateTree(item.Nodes, i)
+                </li>
+            }
+        </ul>
+     }
+}
+

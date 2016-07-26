@@ -19,10 +19,18 @@
       <Folder Name="App_Data" TargetFolderName="App_Data" />
       <Folder Name="App_Start" TargetFolderName="App_Start">
         <ProjectItem ReplaceParameters="true" TargetFileName="RouteConfig.cs">RouteConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Startup.Auth.cs">Startup.Auth.cs</ProjectItem>
       </Folder>
       <Folder Name="Content" TargetFolderName="Content">
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-site.css">bootstrap-site.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-theme.css">bootstrap-theme.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-theme.css.map">bootstrap-theme.css.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-theme.min.css">bootstrap-theme.min.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-theme.min.css.map">bootstrap-theme.min.css.map</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.css">bootstrap.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.css.map">bootstrap.css.map</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css.map">bootstrap.min.css.map</ProjectItem>
         <Folder Name="materialize" TargetFolderName="materialize">
           <Folder Name="css" TargetFolderName="css">
             <ProjectItem ReplaceParameters="true" TargetFileName="index.styles.css">index.styles.css</ProjectItem>
@@ -86,10 +94,18 @@
             </Folder>
           </Folder>
         </Folder>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Site.css">Site.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="materialize-site.css">materialize-site.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PagedList.css">PagedList.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TreeView.css">TreeView.css</ProjectItem>
       </Folder>
       <Folder Name="Controllers" TargetFolderName="Controllers">
-        <ProjectItem ReplaceParameters="true" TargetFileName="HomeController.cs">HomeController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AccountController.cs">AccountController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AuthBaseController.cs">AuthBaseController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseController.cs">BaseController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BootstrapController.cs">BootstrapController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MaterializeController.cs">MaterializeController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MenuController.cs">MenuController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RoleController.cs">RoleController.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
       <Folder Name="fonts" TargetFolderName="fonts">
@@ -97,6 +113,7 @@
         <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.svg">glyphicons-halflings-regular.svg</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.ttf">glyphicons-halflings-regular.ttf</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.woff">glyphicons-halflings-regular.woff</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.woff2">glyphicons-halflings-regular.woff2</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
@@ -106,6 +123,9 @@
         <ProjectItem ReplaceParameters="false" TargetFileName="background3.jpg">background3.jpg</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="ground-green.png">ground-green.png</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="t-satellite-hero.png">t-satellite-hero.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="trvw_folder_close.png">trvw_folder_close.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="trvw_folder_open.png">trvw_folder_open.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="trvw_item.png">trvw_item.png</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="type-full-white-2.png">type-full-white-2.png</ProjectItem>
       </Folder>
       <Folder Name="Models" TargetFolderName="Models" />
@@ -119,6 +139,7 @@
         <Folder Name="demo" TargetFolderName="demo">
           <ProjectItem ReplaceParameters="true" TargetFileName="init.js">init.js</ProjectItem>
         </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ie10-viewport-bug-workaround.js">ie10-viewport-bug-workaround.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-2.2.4.intellisense.js">jquery-2.2.4.intellisense.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-2.2.4.js">jquery-2.2.4.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="jquery-2.2.4.min.js">jquery-2.2.4.min.js</ProjectItem>
@@ -135,15 +156,52 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="respond.matchmedia.addListener.min.js">respond.matchmedia.addListener.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="respond.min.js">respond.min.js</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="scrollreveal.min.js">scrollreveal.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TreeView.js">TreeView.js</ProjectItem>
       </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Startup.cs">Startup.cs</ProjectItem>
       <Folder Name="Views" TargetFolderName="Views">
         <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
-        <Folder Name="Home" TargetFolderName="Home">
-          <ProjectItem ReplaceParameters="true" TargetFileName="Demo.cshtml">Demo.cshtml</ProjectItem>
+        <Folder Name="Account" TargetFolderName="Account">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Body.cshtml">_Body.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Create.cshtml">Create.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Edit.cshtml">Edit.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="EditPassword.cshtml">EditPassword.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Login.cshtml">Login.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Bootstrap" TargetFolderName="Bootstrap">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Grids.cshtml">Grids.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Jumbotron.cshtml">Jumbotron.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="NarrowJumbotron.cshtml">NarrowJumbotron.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Starter.cshtml">Starter.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Theme.cshtml">Theme.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Materialize" TargetFolderName="Materialize">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Landing.cshtml">Landing.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Menu" TargetFolderName="Menu">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Body.cshtml">_Body.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Tree.cshtml">_Tree.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_TreeMenu.cshtml">_TreeMenu.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Create.cshtml">Create.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ModifyLang.cshtml">ModifyLang.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Update.cshtml">Update.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Role" TargetFolderName="Role">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Body.cshtml">_Body.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_TreeCheck.cshtml">_TreeCheck.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Create.cshtml">Create.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Edit.cshtml">Edit.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
         </Folder>
         <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_BootstrapLayout.cshtml">_BootstrapLayout.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_LoginPartial.cshtml">_LoginPartial.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_MaterializeLayout.cshtml">_MaterializeLayout.cshtml</ProjectItem>
         </Folder>
         <ProjectItem ReplaceParameters="true" TargetFileName="web.config">web.config</ProjectItem>
       </Folder>

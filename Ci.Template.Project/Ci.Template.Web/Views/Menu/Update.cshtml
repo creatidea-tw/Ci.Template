@@ -1,0 +1,36 @@
+﻿@model Ci.Template.Library.Models.Menu
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <!--Tree-->
+    <div class="col-sm-4">
+        @Html.Action("_Tree", new { typeOpt = ViewBag.TypeOpt, currentId =  ViewBag.CurrentId })
+    </div>
+
+    <!--Edit-->
+    <div class="col-sm-8">
+        <br/>
+        <h3>編輯選單</h3>
+        <br/>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @{ Html.RenderPartial("_Body", this.Model);}
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="儲存" class="btn btn-info"/>
+                        <a href="@Url.Action("Delete", new { id = Model.Id, type = ViewBag.TypeOpt  })" class="btn btn-danger" onclick="return confirm('確定要刪除嗎？')">刪除</a>
+                        @Html.ActionLink("取消", "Index", new { typeOpt = ViewBag.TypeOpt, currentId = ViewBag.CurrentId }, htmlAttributes: new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

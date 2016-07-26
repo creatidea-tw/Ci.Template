@@ -1,0 +1,51 @@
+﻿@charset "utf-8";
+#TreeView {
+	padding: 0 10px;
+}
+#TreeView ul, #TreeView li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	clear: both;
+}
+#TreeView ul ul {
+	margin-left: 23px;
+	display: none;
+}
+#TreeView li.trvw_showed > ul {
+	display: block;
+}
+#TreeView li {
+	overflow: hidden;
+}
+#TreeView ul ul li {
+	padding-left: 0;
+}
+#TreeView li > .trvw_item > span {
+	padding-left: 23px;
+	background: url(../Images/trvw_item.png) left center no-repeat;
+}
+.trvw_ebtns {
+	width: 1px;
+	white-space: nowrap;
+}
+.trvw_ebtns a {
+	/*margin-left: 5px;*/
+}
+#TreeView li.trvw_gorup > .trvw_item > span {
+	background-image: url(../Images/trvw_folder_close.png);
+	cursor: pointer;
+}
+#TreeView li.trvw_gorup.trvw_showed > .trvw_item > span {
+	background-image: url(../Images/trvw_folder_open.png);
+}
+.trvw_item {
+	display: table;
+	width: 100%;
+}
+.trvw_item > * {
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 1.5em;
+	padding: 5px 0;
+}

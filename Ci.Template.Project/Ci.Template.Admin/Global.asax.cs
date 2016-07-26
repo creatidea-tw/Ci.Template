@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Ci.Mms.Admin
+namespace $safeprojectname$
 {
     public class MvcApplication : System.Web.HttpApplication
     {

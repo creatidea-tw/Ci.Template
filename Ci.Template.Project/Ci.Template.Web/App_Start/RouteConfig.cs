@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace $safeprojectname$
+namespace Ci.Mms.Admin
 {
     public class RouteConfig
     {
@@ -16,7 +16,7 @@ namespace $safeprojectname$
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Materialize", action = "Landing", id = UrlParameter.Optional }
             );
         }
     }

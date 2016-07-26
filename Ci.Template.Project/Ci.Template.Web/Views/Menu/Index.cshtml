@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Ci.Template.Library.ViewModels.TreeViewModel>
+
+@{
+    ViewBag.Title = "選單管理";
+}
+
+<div class="row">
+    <!--Tree-->
+    <div class="col-sm-4">
+        @{Html.RenderAction("_Tree", new { typeOpt = ViewBag.TypeOpt, currentId = ViewBag.CurrentId });}
+    </div>
+
+    <div class="col-sm-8">
+     
+    </div>
+</div>

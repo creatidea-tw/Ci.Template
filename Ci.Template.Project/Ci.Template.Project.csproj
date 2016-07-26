@@ -70,6 +70,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -78,15 +80,86 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Content>
     <Content Include="Ci.Template.Admin\Properties\AssemblyInfo.cs" />
+    <Content Include="Ci.Template.Library\Models\CiTemplate.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CiTemplate.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Ci.Template.Library\Models\CiTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CiTemplate1.cs</LastGenOutput>
+    </Content>
     <Content Include="Ci.Template.Library\Properties\AssemblyInfo.cs" />
+    <Content Include="Ci.Template.Service\Content\PagedList.css" />
     <Content Include="Ci.Template.Service\Properties\AssemblyInfo.cs" />
     <Content Include="Ci.Template.Web\App_Start\RouteConfig.cs" />
+    <Content Include="Ci.Template.Web\Content\bootstrap-site.css" />
+    <Content Include="Ci.Template.Web\Content\bootstrap-theme.css" />
+    <Content Include="Ci.Template.Web\Content\bootstrap-theme.min.css" />
+    <Content Include="Ci.Template.Web\Content\materialize-site.css" />
+    <Content Include="Ci.Template.Web\Content\PagedList.css" />
+    <Content Include="Ci.Template.Web\Content\TreeView.css" />
     <Content Include="Ci.Template.Web\Controllers\HomeController.cs" />
     <Content Include="Ci.Template.Web\Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Content>
+    <Content Include="Ci.Template.Web\Images\trvw_folder_close.png" />
+    <Content Include="Ci.Template.Web\Images\trvw_folder_open.png" />
+    <Content Include="Ci.Template.Web\Images\trvw_item.png" />
     <Content Include="Ci.Template.Web\Properties\AssemblyInfo.cs" />
+    <Content Include="Ci.Template.Library\Commons\Keys.cs" />
+    <Content Include="Ci.Template.Library\Enums\MenuType.cs" />
+    <Content Include="Ci.Template.Library\Extensions\ObjectExtensions.cs" />
+    <Content Include="Ci.Template.Library\Extensions\StringExtensions.cs" />
+    <Content Include="Ci.Template.Library\Models\Admin.cs">
+      <DependentUpon>CiTemplate.tt</DependentUpon>
+    </Content>
+    <Content Include="Ci.Template.Library\Models\CiTemplate.Context.cs" />
+    <Content Include="Ci.Template.Library\Models\CiTemplate.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CiTemplate.Context.tt</DependentUpon>
+    </Content>
+    <Content Include="Ci.Template.Library\Models\CiTemplate.cs" />
+    <Content Include="Ci.Template.Library\Models\CiTemplate.Designer.cs">
+      <DependentUpon>CiTemplate.cs</DependentUpon>
+    </Content>
+    <Content Include="Ci.Template.Library\Models\CiTemplate1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CiTemplate.tt</DependentUpon>
+    </Content>
+    <Content Include="Ci.Template.Library\Models\CiTemplate1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CiTemplate.edmx</DependentUpon>
+    </Content>
+    <Content Include="Ci.Template.Library\Models\Menu.cs">
+      <DependentUpon>CiTemplate.tt</DependentUpon>
+    </Content>
+    <Content Include="Ci.Template.Library\Models\Role.cs">
+      <DependentUpon>CiTemplate.tt</DependentUpon>
+    </Content>
+    <Content Include="Ci.Template.Library\ViewModels\AccountViewModel.cs" />
+    <Content Include="Ci.Template.Library\ViewModels\RoleViewModel.cs" />
+    <Content Include="Ci.Template.Library\ViewModels\TreeViewModel.cs" />
+    <Content Include="Ci.Template.Service\AccountService.cs" />
+    <Content Include="Ci.Template.Service\BaseService.cs" />
+    <Content Include="Ci.Template.Service\Helpers\NetHelper.cs" />
+    <Content Include="Ci.Template.Service\Helpers\UserHelper.cs" />
+    <Content Include="Ci.Template.Service\MenuService.cs" />
+    <Content Include="Ci.Template.Service\RoleService.cs" />
+    <Content Include="Ci.Template.Web\App_Start\Startup.Auth.cs" />
+    <Content Include="Ci.Template.Web\Controllers\AccountController.cs" />
+    <Content Include="Ci.Template.Web\Controllers\AuthBaseController.cs" />
+    <Content Include="Ci.Template.Web\Controllers\BaseController.cs" />
+    <Content Include="Ci.Template.Web\Controllers\BootstrapController.cs" />
+    <Content Include="Ci.Template.Web\Controllers\MaterializeController.cs" />
+    <Content Include="Ci.Template.Web\Controllers\MenuController.cs" />
+    <Content Include="Ci.Template.Web\Controllers\RoleController.cs" />
+    <Content Include="Ci.Template.Web\Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Ci.Template.Web\Scripts\ie10-viewport-bug-workaround.js" />
+    <Content Include="Ci.Template.Web\Scripts\TreeView.js" />
     <Content Include="__PreviewImage.png" />
     <Content Include="__TemplateIcon.png" />
   </ItemGroup>
@@ -97,6 +170,21 @@
     <None Include="Ci.Template.Admin\Web.config" />
     <None Include="Ci.Template.Admin\Web.Debug.config" />
     <None Include="Ci.Template.Admin\Web.Release.config" />
+    <EntityDeploy Include="Ci.Template.Library\Models\CiTemplate.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CiTemplate1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Ci.Template.Library\App.Config" />
+    <None Include="Ci.Template.Library\Models\CiTemplate.edmx.diagram">
+      <DependentUpon>CiTemplate.edmx</DependentUpon>
+    </None>
+    <None Include="Ci.Template.Library\packages.config" />
+    <None Include="Ci.Template.Service\App.config" />
+    <None Include="Ci.Template.Service\packages.config" />
+    <None Include="Ci.Template.Web\Content\bootstrap-theme.css.map" />
+    <None Include="Ci.Template.Web\Content\bootstrap-theme.min.css.map" />
+    <None Include="Ci.Template.Web\Content\bootstrap.css.map" />
+    <None Include="Ci.Template.Web\Content\bootstrap.min.css.map" />
     <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Bold.eot" />
     <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Bold.ttf" />
     <None Include="Ci.Template.Web\Content\materialize\fonts\roboto\Roboto-Bold.woff" />
@@ -144,6 +232,7 @@
     <None Include="Ci.Template.Web\fonts\glyphicons-halflings-regular.eot" />
     <None Include="Ci.Template.Web\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Ci.Template.Web\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Ci.Template.Web\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Ci.Template.Web\packages.config" />
     <None Include="Ci.Template.Web\Scripts\jquery-2.2.4.min.map" />
     <Content Include="Ci.Template.Web\Views\Home\Demo.cshtml" />
@@ -151,6 +240,35 @@
     <Content Include="Ci.Template.Web\Views\Shared\_Layout.cshtml" />
     <Content Include="Ci.Template.Web\Views\web.config" />
     <Content Include="Ci.Template.Web\Views\_ViewStart.cshtml" />
+    <None Include="Ci.Template.Web\Views\Account\Create.cshtml" />
+    <None Include="Ci.Template.Web\Views\Account\Edit.cshtml" />
+    <None Include="Ci.Template.Web\Views\Account\EditPassword.cshtml" />
+    <None Include="Ci.Template.Web\Views\Account\Index.cshtml" />
+    <None Include="Ci.Template.Web\Views\Account\Login.cshtml" />
+    <None Include="Ci.Template.Web\Views\Account\_Body.cshtml" />
+    <None Include="Ci.Template.Web\Views\Bootstrap\Grids.cshtml" />
+    <None Include="Ci.Template.Web\Views\Bootstrap\Index.cshtml" />
+    <None Include="Ci.Template.Web\Views\Bootstrap\Jumbotron.cshtml" />
+    <None Include="Ci.Template.Web\Views\Bootstrap\NarrowJumbotron.cshtml" />
+    <None Include="Ci.Template.Web\Views\Bootstrap\Starter.cshtml" />
+    <None Include="Ci.Template.Web\Views\Bootstrap\Theme.cshtml" />
+    <None Include="Ci.Template.Web\Views\Materialize\Index.cshtml" />
+    <None Include="Ci.Template.Web\Views\Materialize\Landing.cshtml" />
+    <None Include="Ci.Template.Web\Views\Menu\Create.cshtml" />
+    <None Include="Ci.Template.Web\Views\Menu\Index.cshtml" />
+    <None Include="Ci.Template.Web\Views\Menu\ModifyLang.cshtml" />
+    <None Include="Ci.Template.Web\Views\Menu\Update.cshtml" />
+    <None Include="Ci.Template.Web\Views\Menu\_Body.cshtml" />
+    <None Include="Ci.Template.Web\Views\Menu\_Tree.cshtml" />
+    <None Include="Ci.Template.Web\Views\Menu\_TreeMenu.cshtml" />
+    <None Include="Ci.Template.Web\Views\Role\Create.cshtml" />
+    <None Include="Ci.Template.Web\Views\Role\Edit.cshtml" />
+    <None Include="Ci.Template.Web\Views\Role\Index.cshtml" />
+    <None Include="Ci.Template.Web\Views\Role\_Body.cshtml" />
+    <None Include="Ci.Template.Web\Views\Role\_TreeCheck.cshtml" />
+    <None Include="Ci.Template.Web\Views\Shared\_BootstrapLayout.cshtml" />
+    <None Include="Ci.Template.Web\Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Ci.Template.Web\Views\Shared\_MaterializeLayout.cshtml" />
     <None Include="Ci.Template.Web\Web.config" />
     <None Include="Ci.Template.Web\Web.Debug.config" />
     <None Include="Ci.Template.Web\Web.Release.config" />
@@ -223,6 +341,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
