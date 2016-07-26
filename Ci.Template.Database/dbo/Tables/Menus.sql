@@ -1,4 +1,4 @@
-CREATE TABLE [dbo].[Menus] (
+﻿CREATE TABLE [dbo].[Menus] (
     [Id]          UNIQUEIDENTIFIER CONSTRAINT [DF__Menus__Id__339FAB6E] DEFAULT (newid()) NOT NULL,
     [NativeName]  NVARCHAR (50)    NOT NULL,
     [Controller]  NVARCHAR (50)    NULL,
@@ -13,8 +13,6 @@ CREATE TABLE [dbo].[Menus] (
     CONSTRAINT [PK_Menus] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Menus_Menus] FOREIGN KEY ([ParentId]) REFERENCES [dbo].[Menus] ([Id])
 );
-
-
 
 
 GO

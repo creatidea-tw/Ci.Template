@@ -1,7 +1,7 @@
 ﻿namespace Ci.Template.Library.Extensions
 {
     /// <summary>
-    /// StringExtensions
+    /// Extension methods for the string data type
     /// </summary>
     public static class StringExtensions
     {
